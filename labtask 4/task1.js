@@ -1,6 +1,5 @@
 "use strict";
 
-// Task 1: sample biography. Replace these details with your own.
 var name = "Sarim Khan";
 var age = 21;
 var isStudent = true;
@@ -27,7 +26,6 @@ var biography = {
   degreeProgram: degreeProgram,
 };
 
-// Print selected fields; do not print the entire object.
 console.log("Biography");
 console.log("Name: " + biography.name);
 console.log("Age: " + biography.age);
