@@ -1,6 +1,6 @@
 # Full stack coursework
 
-Course tasks are organized in their own folders. Open each task folder's README for instructions and its HTML entry point.
+Course tasks are organized in their own folders. Lab Task 4 contains six standalone JavaScript files; run a file with Node.js or in a browser console.
 
 ## Labs
 
