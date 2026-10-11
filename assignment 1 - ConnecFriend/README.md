@@ -18,7 +18,7 @@ The app saves sample posts, reactions, ratings, requests, and messages in this b
 
 - Login screen, member profile, and a friends list.
 - Friend feed ordered by each friend's latest login.
-- Sharing to all friends or selected friends, with an optional photo.
+- Sharing text updates with all friends or selected friends.
 - Friend requests that can be sent, accepted, and declined.
 - Request blocking when a member ignores the sender.
 - Private friend ratings: Stupid, Cool, and Trustworthy.

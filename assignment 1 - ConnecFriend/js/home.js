@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("feed").innerHTML = posts.map(function (post) {
       const author = personById(data, post.author);
       const isOwn = post.author === "sarim";
-      const visual = post.image ? '<img class="post-photo" src="' + post.image + '" alt="Photo shared by ' + escapeText(author.name) + '">' : (post.art ? '<div class="post-art" role="img" aria-label="' + escapeText(post.artLabel) + '"><span>' + escapeText(post.art) + '</span><small>' + escapeText(post.artLabel) + "</small></div>" : "");
+      const visual = post.art ? '<div class="post-art" role="img" aria-label="' + escapeText(post.artLabel) + '"><span>' + escapeText(post.art) + '</span><small>' + escapeText(post.artLabel) + "</small></div>" : "";
       const audienceLabel = post.audience === "All friends" ? "All friends" : "Shared with " + post.audience;
       return '<article class="post-card ' + (post.art ? "post-card-featured" : "post-card-note") + (post.id === 2 ? " post-card-peach" : "") + '"><div class="post-author"><a href="profile.html' + (isOwn ? "" : "?id=" + author.id) + '">' + avatar(author, "avatar-medium") + '</a><div class="flex-grow-1"><a class="author-name" href="profile.html' + (isOwn ? "" : "?id=" + author.id) + '">' + escapeText(author.name) + '</a><small>' + (isOwn ? "You · just now" : "Posted " + timeAgo(post.minutesAgo)) + '</small></div><span class="post-mark" aria-hidden="true">✳</span></div><p class="post-text">' + escapeText(post.text) + '</p>' + visual + '<div class="post-footer"><div class="d-flex gap-2"><button class="reaction ' + (post.myReaction === "like" ? "reaction-active" : "") + '" data-react="like" data-id="' + post.id + '" aria-pressed="' + (post.myReaction === "like") + '">♡ <span>Like</span> ' + post.likes + '</button><button class="reaction ' + (post.myReaction === "dislike" ? "reaction-active" : "") + '" data-react="dislike" data-id="' + post.id + '" aria-pressed="' + (post.myReaction === "dislike") + '">⌁ <span>Dislike</span> ' + post.dislikes + '</button></div><span class="post-audience">♧ ' + escapeText(audienceLabel) + '</span></div></article>';
     }).join("") || '<div class="content-panel empty-state"><span>🌷</span><h2>Your feed is waiting.</h2><p>Invite a friend or share the first little update.</p></div>';
@@ -101,26 +101,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("share-post").addEventListener("click", function () {
     const text = document.getElementById("post-text").value.trim();
-    const file = document.getElementById("post-image").files[0];
     const audienceLabel = selectedAudience();
     const error = document.getElementById("post-error");
-    if (!text && !file) { error.textContent = "Add a few words or choose a photo before you share."; error.classList.remove("d-none"); return; }
+    if (!text) { error.textContent = "Write a short update before you share."; error.classList.remove("d-none"); return; }
     if (!audienceLabel) { error.textContent = "Choose all friends or at least one person to share with."; error.classList.remove("d-none"); return; }
-    if (file && file.size > 600000) { error.textContent = "Choose a photo smaller than 600 KB for this demo."; error.classList.remove("d-none"); return; }
-    function addPost(image) {
-      data.posts.push({ id: Date.now(), author: "sarim", text: text, art: "", artLabel: "", image: image, likes: 0, dislikes: 0, myReaction: "", audience: audienceLabel, minutesAgo: 0 });
-      try { saveData(data); }
-      catch (problem) { error.textContent = "This browser is out of storage. Try sharing text without a photo."; error.classList.remove("d-none"); data.posts.pop(); return; }
-      document.getElementById("post-text").value = "";
-      document.getElementById("post-image").value = "";
-      error.classList.add("d-none"); drawPosts();
-    }
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function () { addPost(reader.result); };
-      reader.onerror = function () { error.textContent = "That photo could not be read. Choose another one."; error.classList.remove("d-none"); };
-      reader.readAsDataURL(file);
-    } else addPost("");
+    data.posts.push({ id: Date.now(), author: "sarim", text: text, art: "", artLabel: "", likes: 0, dislikes: 0, myReaction: "", audience: audienceLabel, minutesAgo: 0 });
+    try { saveData(data); }
+    catch (problem) { error.textContent = "This browser is out of storage. Try removing a few saved posts."; error.classList.remove("d-none"); data.posts.pop(); return; }
+    document.getElementById("post-text").value = "";
+    error.classList.add("d-none"); drawPosts();
   });
 
   drawFriends();

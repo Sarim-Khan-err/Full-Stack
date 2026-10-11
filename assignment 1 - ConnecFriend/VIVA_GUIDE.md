@@ -4,7 +4,7 @@
 
 > “ConnecFriend is a browser-only prototype of a campus social network. I built the pages with HTML, used Bootstrap for layout, and used plain JavaScript for the interactions. There are no server calls, as the assignment requested. One demo account can post, react, send friend requests, rate friends, and keep local message notes.”
 
-Open `login.html` and use `sarim` / `meadow123`. On Home, point out the friend order, share a short update, and press Like twice to show the count go up and back down. Try a photo if you have one smaller than 600 KB. On People, accept Mariam's request and try to invite Noor to show the ignore rule. Open Zain's profile and use its Message button, send a note, then return to his profile and open the conversation again to show the note is still there. The note stays in Sarim's browser conversation; no second account receives it. Finish with the My profile page and show the friends list. Use **Reset demo data** to restore the starting examples.
+Open `login.html` and use `sarim` / `meadow123`. On Home, point out the friend order, share a short text update, and press Like twice to show the count go up and back down. On People, accept Mariam's request and try to invite Noor to show the ignore rule. Open Zain's profile and use its Message button, send a note, then return to his profile and open the conversation again to show the note is still there. The note stays in Sarim's browser conversation; no second account receives it. Finish with the My profile page and show the friends list. Use **Reset demo data** to restore the starting examples.
 
 ## File map
 
@@ -78,7 +78,7 @@ The audience menu has one All friends checkbox and one checkbox per friend. You 
 
 ### What error checks are included?
 
-Sign-in fields are required, incorrect details show a message, empty posts cannot be shared, and the photo picker limits a photo to 600 KB. Message and post text are trimmed and limited in length. Text is escaped before it is added to the page.
+Sign-in fields are required, incorrect details show a message, and empty posts cannot be shared. Message and post text are trimmed and limited in length. Text is escaped before it is added to the page.
 
 ### What is one limitation?
 
@@ -91,6 +91,5 @@ The data belongs to this browser only. It is not shared with another person's br
 - `filter()` makes a smaller array from matching items.
 - `sort()` changes the order of an array.
 - `map()` builds page content from an array.
-- `FileReader` reads the optional photo selected on the computer.
 - `escapeText()` keeps typed text from being interpreted as page markup.
 
