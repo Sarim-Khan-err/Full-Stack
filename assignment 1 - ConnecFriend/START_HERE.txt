@@ -1,0 +1,9 @@
+ConnecFriend · CS 301 Assignment 1
+Mohammad Sarim Khan · Roll number 241851
+
+Open login.html in a browser.
+Use username sarim and password meadow123.
+The demo has one login. Friends are sample profiles; they are not additional accounts.
+Messages are saved in your conversation list in this browser and are not delivered to a second login.
+Use Reset demo data on Home to restart the example.
+See VIVA_GUIDE.md for the code map and viva practice.
