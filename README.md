@@ -1,10 +1,11 @@
 # Full stack coursework
 
-Course tasks are organized in their own folders. Lab Task 4 contains six standalone JavaScript files; run a file with Node.js or in a browser console.
+Course tasks are organized in their own folders. Lab solutions use standalone JavaScript and can be run with Node.js unless noted otherwise.
 
 ## Labs
 
 - [Lab Task 4 — JavaScript Practice](labtask%204/)
+- [Lab Task 6 — Async/Await and Promise.all](labtask%206/)
 
 ## Assignments
 
