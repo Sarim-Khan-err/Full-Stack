@@ -1,0 +1,25 @@
+import { runAdmissionDemo } from './task1-admission.js';
+import { runAnalyticsDemo } from './task2-analytics.js';
+import { runProfileDemo } from './task3-profile.js';
+import { runHierarchyDemo } from './task4-hierarchy.js';
+import { runTranscriptDemo } from './task5/main.js';
+import { runCallbackDemo } from './task6-callbacks.js';
+import { runPromiseDemo } from './task7-promises.js';
+import { runDashboardDemo } from './task8-async-dashboard.js';
+
+console.log('\n===== TASK 1: ADMISSIONS =====');
+runAdmissionDemo();
+console.log('\n===== TASK 2: ACADEMIC ANALYTICS =====');
+runAnalyticsDemo();
+console.log('\n===== TASK 3: SAFE PROFILE UPDATE =====');
+runProfileDemo();
+console.log('\n===== TASK 4: CLASSES AND THIS =====');
+runHierarchyDemo();
+console.log('\n===== TASK 5: ES MODULE TRANSCRIPTS =====');
+runTranscriptDemo();
+console.log('\n===== TASK 6: CALLBACK REGISTRATION =====');
+await new Promise((resolve) => runCallbackDemo(resolve));
+console.log('\n===== TASK 7: PROMISE REGISTRATION =====');
+await runPromiseDemo();
+console.log('\n===== TASK 8: ASYNC DASHBOARD =====');
+await runDashboardDemo();
