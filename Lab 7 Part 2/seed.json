@@ -1,0 +1,80 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "n": "Oversized Hoodie",
+      "cat": "Hoodies",
+      "p": 4500,
+      "k": "hoodie,streetwear"
+    },
+    {
+      "id": 2,
+      "n": "Relaxed Cargo Pants",
+      "cat": "Bottoms",
+      "p": 5200,
+      "k": "cargo,pants"
+    },
+    {
+      "id": 3,
+      "n": "Heavyweight Ecru Tee",
+      "cat": "Tees",
+      "p": 2200,
+      "k": "graphic,tshirt"
+    },
+    {
+      "id": 4,
+      "n": "Chocolate Rib Baby Tee",
+      "cat": "Tees",
+      "p": 1800,
+      "k": "crop,top,fashion"
+    },
+    {
+      "id": 5,
+      "n": "Straight Leg Denim",
+      "cat": "Bottoms",
+      "p": 5800,
+      "k": "wide,jeans"
+    },
+    {
+      "id": 6,
+      "n": "Studio Bomber Jacket",
+      "cat": "Jackets",
+      "p": 8900,
+      "k": "varsity,jacket"
+    },
+    {
+      "id": 7,
+      "n": "Matte Puffer Vest",
+      "cat": "Jackets",
+      "p": 6400,
+      "k": "puffer,vest"
+    },
+    {
+      "id": 8,
+      "n": "Washed Olive Cap",
+      "cat": "Accessories",
+      "p": 1500,
+      "k": "bucket,hat"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "seed-1",
+      "n": "Hamna",
+      "s": 5,
+      "t": "Hoodie is SO soft. Got compliments all week, no cap."
+    },
+    {
+      "id": "seed-2",
+      "n": "Zain",
+      "s": 5,
+      "t": "Denim is an everyday staple. Love the relaxed styling."
+    },
+    {
+      "id": "seed-3",
+      "n": "Areeba",
+      "s": 4,
+      "t": "Love the color palette. The layers work really well together."
+    }
+  ]
+}
