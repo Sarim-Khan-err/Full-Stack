@@ -1,8 +1,8 @@
 const { BadRequestException, Injectable, NotFoundException } = require('@nestjs/common');
 const { randomUUID } = require('node:crypto');
 const { join } = require('node:path');
-const { createStore } = require('./store');
-const { products, reviews } = require('./seed.json');
+const { createStore } = require('../Lab 7 Part 2/store');
+const { products, reviews } = require('../Lab 7 Part 2/seed.json');
 
 const fresh = () => ({
   products: structuredClone(products), reviews: structuredClone(reviews), carts: [], orders: []
@@ -10,7 +10,7 @@ const fresh = () => ({
 const hasText = value => typeof value === 'string' && value.trim().length > 0;
 
 class FitcheckService {
-  constructor(file = join(__dirname, 'data', 'fitcheck.json')) {
+  constructor(file = join(__dirname, '..', 'Lab 7 Part 2', 'data', 'lab8-fitcheck.json')) {
     this.store = createStore(file);
   }
 
